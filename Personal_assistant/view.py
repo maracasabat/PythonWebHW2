@@ -7,7 +7,7 @@ from difflib import get_close_matches
 from sorter import start
 
 from styles import show_records, show_notes, show_print, bcolors, pretty_title
-from view import Record, SomeBook, Name, Phone, Address, Email, Birthday, NoteBookRecord, NoteBookText, NoteBookTeg
+from classes import Record, SomeBook, Name, Phone, Address, Email, Birthday, NoteBookRecord, NoteBookText, NoteBookTeg
 
 
 addressbook = SomeBook('data.bin')

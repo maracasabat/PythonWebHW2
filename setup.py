@@ -9,7 +9,7 @@ setup(
     author='Ivan Yevpat, Aleksandra Boldysheva, Mark Podopryhora',
     author_email='maracasabat@gmail.com, 44darkos@gmail.com, sash_01@icloud.com',
     license='MIT',
-    install_requires=['pick==1.3.0', 'prettytable==3.3.0', 'termcolor2==0.0.3'],
+    install_requires=['pick==1.2.0', 'prettytable==3.3.0', 'termcolor2==0.0.3'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

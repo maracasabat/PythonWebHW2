@@ -2,6 +2,7 @@ import pickle
 from collections import UserDict
 from datetime import datetime
 import re
+from abc import ABC, abstractmethod
 
 from Personal_assistant.styles import bcolors
 
@@ -93,7 +94,21 @@ class NoteBookTeg(Field):
     pass
 
 
-class NoteBookRecord:
+class AbstractNoteBookRecord(ABC):
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+    @abstractmethod
+    def add_teg(self, teg: NoteBookTeg):
+        pass
+
+
+class NoteBookRecord(AbstractNoteBookRecord):
     def __init__(self, name: Name, text: NoteBookText, *args):
         self.name = name
         self.text = text
@@ -111,7 +126,25 @@ class NoteBookRecord:
                 return self.tegs.pop(i)
 
 
-class Record:
+class AbstractRecord(ABC):
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def add_address(self, phone: Phone):
+        pass
+
+    @abstractmethod
+    def add_birthday(self, birthday: Birthday):
+        pass
+
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+
+class Record(AbstractRecord):
     def __init__(self, name: Name, phone: Phone, adr: Address, email: Email, birthday: Birthday = None):
         self.name = name
         self.address = adr
