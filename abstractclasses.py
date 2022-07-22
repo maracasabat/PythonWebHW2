@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from collections import UserDict
 
 
-class Record(ABC):
+class AbstractRecord(ABC):
     @abstractmethod
     def add_address(self):
         pass
@@ -11,7 +11,7 @@ class Record(ABC):
         pass
 
 
-class NoteBookRecord(ABC):
+class AbstractNoteBook(ABC):
     @abstractmethod
     def add_teg(self):
         pass
@@ -21,7 +21,7 @@ class NoteBookRecord(ABC):
         pass
 
 
-class SomeBook(UserDict, ABC):
+class AbstractAddressBook(ABC):
     @abstractmethod
     def add_record(self):
         pass
@@ -43,5 +43,41 @@ class SomeBook(UserDict, ABC):
         pass
 
     @abstractmethod
+    def load_data(self):
+        pass
+
+
+class Record(AbstractRecord):
+    def add_address(self):
+        pass
+
+    def add_birthday(self):
+        pass
+
+
+class NoteBookRecord(AbstractNoteBook):
+    def add_teg(self):
+        pass
+
+    def del_teg(self):
+        pass
+
+
+class SomeBook(UserDict, AbstractAddressBook):
+    def add_record(self):
+        pass
+
+    def delete_record(self):
+        pass
+
+    def update_record(self):
+        pass
+
+    def to_file(self):
+        pass
+
+    def save_data(self):
+        pass
+
     def load_data(self):
         pass
